@@ -8,6 +8,10 @@ function addTask(){
         return;
     }
 
+    if (!isInputValid(taskText)) {
+        return; // Arrêtez l'exécution de la fonction si la limite est dépassée
+    }
+
     let li = document.createElement('li');
 
     li.innerHTML = taskText;
@@ -52,3 +56,19 @@ function editTask(task){
 function deleteTask(task){
     taskList.removeChild(task)
 }
+
+function isInputValid(inputText) {
+    const maxLength = 50;
+    if (inputText.length > maxLength) {
+        alert("You have exceeded the maximum number of allowed characters.");
+        return false;
+    }
+    return true; // Retourne true si la saisie est valide
+}
+
+// Ajout d'un écouteur d'événement pour surveiller la saisie de l'utilisateur
+let taskInput = document.getElementById('taskInput');
+taskInput.addEventListener('input', function() {
+    // Vérifier la longueur de la valeur saisie dans le champ de texte
+    isInputValid(taskInput.value);
+});
