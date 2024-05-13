@@ -44,7 +44,7 @@ function editTask(task){
     let taskTextElement = task.firstChild;
     let taskText = taskTextElement.textContent;
 
-    let newTaskText = prompt('Modifier la tâche:', taskText)
+    let newTaskText = prompt('Modify the task:', taskText)
 
     if(newTaskText === null || newTaskText === ""){
         return;
