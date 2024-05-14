@@ -61,6 +61,12 @@ ul li{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
+li div {
+    flex-grow: 1; /* Utilise tout l'espace disponible */
+    padding-right: 10px; /* Ajoute un espace entre le texte et les boutons */
+    word-break: break-word; /* Gère les mots longs */
+}
+
 ion-icon{
     font-size: 20px;
     margin-right: 5px;
